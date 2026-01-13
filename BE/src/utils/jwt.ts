@@ -3,13 +3,13 @@ import { env } from '../config/env'
 
 export const generateAccessToken = (id: string) => {
   return jwt.sign({ id }, env.JWT_SECRET, {
-    expiresIn: '15m'
+    expiresIn: '7d'
   })
 }
 
 export const generateRefreshToken = (id: string) => {
   return jwt.sign({ id }, env.JWT_SECRET, {
-    expiresIn: '7d'
+    expiresIn: '30d'
   })
 }
 
